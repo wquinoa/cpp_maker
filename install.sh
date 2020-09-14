@@ -1,9 +1,9 @@
 #!/bin/bash
 
-$INSTALL_PATH="/usr/local/bin/"
+INSTALL_PATH="/usr/local/bin"
 
 echo "Moving cpp_maker to $INSTALL_PATH"
-curl -lso cpp_maker https://raw.githubusercontent.com/wquinoa/cpp_maker/master/cpp_maker
+curl -lso cpp_maker https://raw.githubusercontent.com/Shimata/cpp_maker/master/cpp_maker.sh
 chmod u+x cpp_maker
 mv cpp_maker $INSTALL_PATH
 echo "Done!"
