@@ -9,5 +9,5 @@ usage: cpp_maker <filename1> <filename2> ...
 
 # installation
 ```bash
-sh -c "$(curl -fSsL https://raw.githubusercontent.com/wquinoa/cpp_maker/master/install.sh)"
+sh -c "$(curl -fSsL https://raw.githubusercontent.com/Shimata/cpp_maker/master/install.sh)"
 ```
