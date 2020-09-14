@@ -1,6 +1,6 @@
 # cpp_maker
 A cute little script for creating dummy cpp classes <br>
-Creates cpp + hpp dummies for your classes with all the <br>
+Creates cpp + hpp files for your classes with all the <br>
 neccessary fields, and adds the 42 header to the top. <br><br>
 
 ```bash
