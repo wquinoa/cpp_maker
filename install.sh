@@ -3,8 +3,8 @@
 INSTALL_PATH="/usr/local/bin"
 
 echo "Moving cpp_maker to $INSTALL_PATH"
-curl -lso cpp_maker https://raw.githubusercontent.com/Shimata/cpp_maker/master/cpp_maker.sh
-chmod u+x cpp_maker
-mv cpp_maker $INSTALL_PATH
+curl -lso mkcpp https://raw.githubusercontent.com/Shimata/cpp_maker/master/cpp_maker.sh
+chmod u+x mkcpp
+mv mkcpp $INSTALL_PATH
 echo "Done!"
-printf "%-7susage: \033[1mcpp_maker\033[0m <filename1> <filename2> ...\n\n" " ";
+mkcpp --help

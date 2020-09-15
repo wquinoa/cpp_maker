@@ -56,20 +56,39 @@ function	createHPP()
 	printf "#endif\n" >> $FILE
 }
 
+function	mkmain()
+{
+	FILE="main.cpp"
+	rm -rf $FILE
+
+	header
+	for class in "$@"; do
+		if [ $class != main ]; then
+			printf "#include \"$class.hpp\"\n" >> $FILE
+		fi
+	done
+	printf "\nint		main(void)\n" >> $FILE
+	printf "{\n	return (0);}\n" >> $FILE
+}
+
 function	init()
 {
 	for arg in "$@"; do
 		NAME=$(echo $arg | sed 's/\.[c|h]pp//g')
 		NAME_UPPER=$(echo $NAME | tr '[:lower:]' '[:upper:]')
-		createCPP
-		createHPP
+		if [ $arg != main ]; then
+			createCPP
+			createHPP
+		else
+			mkmain $@
+		fi
 	done
 	exit
 }
 
 if [ -z $1 ] || [ $1 == --help ] || [ $1 == -h ]; then
 	printf "\n%-7sCreates cpp + hpp class dummies with the filename(s) passed as args" " "
-	printf "\n%-7susage: \033[1mcpp_maker\033[0m <filename1> <filename2> ...\n\n" " ";
+	printf "\n%-7susage: \033[1m$0\033[0m <filename1> <filename2> ...\n\n" " ";
 else
 	init $@
 fi
