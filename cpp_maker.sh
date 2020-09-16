@@ -15,6 +15,8 @@ function	header()
 	printf "/* ************************************************************************** */\n\n" >> $FILE
 }
 
+INSTALL_PATH="/Users/wquinoa/goinfre/bin/"
+
 function	createCPP()
 {
 	FILE="$NAME.cpp"
@@ -41,7 +43,7 @@ function	createHPP()
 
 	header
 	printf "#ifndef %s_HPP\n" $NAME_UPPER >> $FILE
-	printf "# define %s_HPP\n\n" $NAME_UPPER >> $FILE
+	printf "# define %s_HPP\n" $NAME_UPPER >> $FILE
 	printf "# include <iostream>\n\n" >> $FILE
 
 	printf "class %s\n{\n" $NAME >> $FILE
@@ -68,7 +70,7 @@ function	mkmain()
 		fi
 	done
 	printf "\nint		main(void)\n" >> $FILE
-	printf "{\n	return (0);}\n" >> $FILE
+	printf "{\n	return (0);\n}\n" >> $FILE
 }
 
 function	init()
@@ -87,8 +89,17 @@ function	init()
 }
 
 if [ -z $1 ] || [ $1 == --help ] || [ $1 == -h ]; then
-	printf "\n%-7sCreates cpp + hpp class dummies with the filename(s) passed as args" " "
-	printf "\n%-7susage: \033[1m$0\033[0m <filename1> <filename2> ...\n\n" " ";
+	printf "\n    Creates cpp + hpp class dummies with the filename(s) passed as args\n"
+	printf "\n    usage: \033[1mmkcpp\033[0m <filename1> <filename2> ...\n";
+	printf "\n    -h --help : Invoke this manual\n    --uninstall : Uninstall mkcpp\n\n"
+elif [ $1 == --uninstall ];then
+	if [ -f $HOME/.zshrc ];then
+		sed /"#mkcpp"/d $HOME/.zshrc > /dev/null
+	elif [ -f $HOME/.profile ];then
+		sed /"#mkcpp"/d $HOME/.profile > /dev/null 
+	fi
+	echo "Goodbye!"
+	rm -f $INSTALL_PATH/mkcpp
 else
 	init $@
 fi
