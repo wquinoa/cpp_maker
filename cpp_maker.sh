@@ -94,9 +94,9 @@ if [ -z $1 ] || [ $1 == --help ] || [ $1 == -h ]; then
 	printf "\n    -h --help : Invoke this manual\n    --uninstall : Uninstall mkcpp\n\n"
 elif [ $1 == --uninstall ];then
 	if [ -f $HOME/.zshrc ];then
-		sed /"#mkcpp"/d $HOME/.zshrc > /dev/null
+		sed -i '' /"#mkcpp"/d $HOME/.zshrc > /dev/null
 	elif [ -f $HOME/.profile ];then
-		sed /"#mkcpp"/d $HOME/.profile > /dev/null 
+		sed -i '' /"#mkcpp"/d $HOME/.profile > /dev/null 
 	fi
 	echo "Goodbye!"
 	rm -f $INSTALL_PATH/mkcpp
