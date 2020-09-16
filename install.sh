@@ -19,7 +19,7 @@ function	paste_env()
 	local SHELL_=$(echo -n $SHELL | grep -wo 'zsh')
 	if [ $SHELL_ == zsh ];then
 		if [ -z "$( grep "export PATH=$INSTALL_PATH:\$PATH" < ~/.zshrc)" ]; then
-			echo "export PATH=$INSTALL_PATH:\$PATH" >> ~/.zshrc
+			echo "export PATH=$INSTALL_PATH:\$PATH	#mkcpp" >> ~/.zshrc
 		fi
 	else
 		if [ -z "$( grep "export PATH=$INSTALL_PATH:\$PATH" < ~/.profile)" ]; then
