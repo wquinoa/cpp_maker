@@ -1,15 +1,14 @@
 # mkcpp
 A cute little script for creating dummy cpp classes <br>
-Creates cpp + hpp files with Coplien form classes <br>
-and adds the 42 header to the top. <br>
+Creates cpp + hpp files for your classes with all the <br>
+neccessary Coplien fields, and adds the 42 header to the top. <br><br>
 
-If one of args is "main", it will also create a main.cpp and<br>
-include all the other arguments as headers. <br><br>
+If one of args is "main", it will also make a main.cpp and <br>include all the other arguments as headers. <br><br>
 
 ```bash
-usage:	mkcpp <filename1> ... <filenameN>
+usage:	mkcpp <filename1> <filename2> ...
 		mkcpp	-h --help
-			-u --uninstall
+				-u --uninstall
 ```
 
 # installation

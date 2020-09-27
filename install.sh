@@ -18,7 +18,7 @@ paste_path()
 {
 	# Trying to guess whether zsh or something else is being used
 	local shell_=$([ -n "$1" ] && printf "$HOME/.zshrc" || echo "$HOME/.profile")
-	local export_str="export PATH=$install_path:\$PATH"
+	local export_str="export PATH=$install_path:\$PATH #mkcpp"
 
 	# Check whether such a line exists in the config file and paste if needed
 	if [[ -z $(grep "$export_str" "$shell_") ]]; then
