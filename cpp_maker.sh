@@ -84,7 +84,7 @@ mkmain()
 	header
 	for class in "${@/.[c|h]pp/}"; do
 		class="${class/,/}"
-		if [[ $class != main ]]; then
+		if [[ ${class##*\/} != main ]]; then
 			printf "#include \"$class.hpp\"\n" >> "$file"
 		fi
 	done
@@ -98,7 +98,7 @@ init()
 	for arg in $args; do
 		name="${arg/,/}"
 		path="$name"
-		if [[ $arg != main ]]; then
+		if [[ ${arg##*\/} != main ]]; then
 			createCPP
 			createHPP
 		else
