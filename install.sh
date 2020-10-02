@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ ! "$install_path" ]];then
-	install_path="$HOME/goinfre/bin"
+	install_path="$HOME/bin"
 fi
 
 make_dir()

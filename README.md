@@ -8,14 +8,14 @@ If one of args is "main", it will also make a main.cpp and <br>include all the o
 ```bash
 usage:	mkcpp <filename1> <filename2> ...
 		mkcpp	-h --help
-				-u --uninstall
+			-u --uninstall
 ```
 
 # installation
 ```bash
 sh -c "$(curl -fSsL https://raw.githubusercontent.com/Shimata/cpp_maker/master/install.sh)"
 ```
-The default installation dir is $HOME/goinfre/bin/<br>
+The default installation dir is $HOME/bin/<br>
 You can specify another installation directory: <br>
 ```bash
 install_path="Custom/path/here" sh -c "$(curl -fSsL https://raw.githubusercontent.com/Shimata/cpp_maker/master/install.sh)"
