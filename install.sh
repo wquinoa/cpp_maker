@@ -44,7 +44,7 @@ __main_()
 
 	# Attempt to download or move. Clean up if it fails
 	printf "Moving cpp_maker to $install_path\n"
-	curl -lso mkcpp https://raw.githubusercontent.com/Shimata/cpp_maker/master/cpp_maker.sh
+	curl -lso mkcpp https://raw.githubusercontent.com/wquinoa/cpp_maker/master/cpp_maker.sh
 	[ $? == 0 ] && chmod u+x mkcpp && mv mkcpp "$install_path" || cleanup
 
 	"$install_path/mkcpp" --help > /dev/null && \
