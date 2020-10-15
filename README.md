@@ -13,10 +13,10 @@ usage:	mkcpp <filename1> <filename2> ...
 
 # installation
 ```bash
-sh -c "$(curl -fSsL https://raw.githubusercontent.com/Shimata/cpp_maker/master/install.sh)"
+sh -c "$(curl -fSsL https://raw.githubusercontent.com/wquinoa/cpp_maker/master/install.sh)"
 ```
 The default installation dir is $HOME/bin/<br>
 You can specify another installation directory: <br>
 ```bash
-install_path="Custom/path/here" sh -c "$(curl -fSsL https://raw.githubusercontent.com/Shimata/cpp_maker/master/install.sh)"
+install_path="Custom/path/here" sh -c "$(curl -fSsL https://raw.githubusercontent.com/wquinoa/cpp_maker/master/install.sh)"
 ```
