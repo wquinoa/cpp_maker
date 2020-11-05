@@ -114,7 +114,7 @@ uninstall()
 	[[ -f "$HOME/.zshrc" ]] && sed -i '' "/#mkcpp/d" "$HOME/.zshrc"
 	[[ -f "$HOME/.profile" ]] && sed -i '' "/#mkcpp/d" "$HOME/.profile"
 	printf "Removed $install_path from PATH.\n"
-	printf "Bye! Please star the repo if it was useful :)\nhttps://github.com/Shimata/cpp_maker\n"
+	printf "Bye! Please star the repo if it was useful :)\nhttps://github.com/wquinoa/cpp_maker\n"
 	rm -f "$install_path/mkcpp"
 }
 
