@@ -16,14 +16,11 @@ make_dir()
 
 paste_path()
 {
-	# Trying to guess whether zsh or something else is being used
-	local shell_=$([ -n "$1" ] && printf "$HOME/.zshrc" || printf "$HOME/.profile")
+	# Not trying to guess whether zsh or something else is being used sorry
 	local export_str="export PATH=$install_path:\$PATH #mkcpp"
 
-	# Check whether such a line exists in the config file and paste if needed
-	if [[ -z $(grep "$export_str" "$shell_") ]]; then
-		printf "$export_str\n" >> "$shell_"
-	fi
+	[[ -f "$HOME/.zshrc" ]] && printf "$export_str\n" >> $HOME/.zshrc
+	[[ -f "$HOME/.profile" ]] && printf "$export_str\n" >> $HOME/.profile
 }
 
 cleanup()
@@ -39,8 +36,7 @@ cleanup()
 __main_()
 {
 	# Make the directory and paste to PATH if needed
-	[[ ! -d "$install_path" ]] && make_dir
-	paste_path "$(printf $SHELL | grep -wo 'zsh')"
+	paste_path 
 
 	# Attempt to download or move. Clean up if it fails
 	printf "Moving cpp_maker to $install_path\n"
