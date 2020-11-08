@@ -36,6 +36,7 @@ cleanup()
 __main_()
 {
 	# Make the directory and paste to PATH if needed
+	make_dir
 	paste_path 
 
 	# Attempt to download or move. Clean up if it fails
